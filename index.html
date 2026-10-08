@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>CapivaraMod Obfuscator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="nome" class="section">
+            <h1><span>CapivaraMod Obfuscator</span></h1>
+            <p class="sub">Upload an <code>.sb3</code> file. Processing takes place locally in your browser, and the
+                obfuscated project is downloaded automatically.</p>
+        </div>
+        <div id="drop-part" class="section">
+            <div id="drop" tabindex="0">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 16V4m0 0L7 9m5-5 5 5" />
+                    <path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
+                </svg>
+                <b>Drag and drop the .sb3 file here</b>
+                <small>or click to select</small>
+            </div>
+            <input type="file" id="file" accept=".sb3">
+        </div>
+        <div id="opts-part" class="section">
+            <div class="opts">
+                <label><input type="checkbox" id="assets" checked> Obfuscate names of sprites, costumes/backdrops, and
+                    sounds</label>
+                <label><input type="checkbox" id="decoys" checked> Add decoy scripts (junk code that never
+                    runs)</label>
+                <label><input type="checkbox" id="comments" checked> Remove all comments</label>
+                <label><input type="checkbox" id="ids" checked> Random IDs and shuffled block order</label>
+                <label><input type="checkbox" id="bcast" checked> Obfuscate broadcast names</label>
+                <label><input type="checkbox" id="nums" checked> Replace numbers with variables (+ decoy
+                    variables)</label>
+                <label><input type="checkbox" id="procs" checked> Obfuscate custom block names and
+                    arguments</label>
+                <label><input type="checkbox" id="chunk" checked> Fragment scripts into chunks (custom
+                    blocks)</label>
+                <div class="row">Chunk size:
+                    <select id="chunkLevel">
+                        <option value="3-5">Light (3 to 5 blocks)</option>
+                        <option value="2-3" selected>Medium (2 to 3 blocks)</option>
+                        <option value="1-2">Aggressive (1 to 2 blocks)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="status"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
